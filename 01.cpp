@@ -2,35 +2,27 @@
 #include<string>
 using namespace std;
 
-/*
-	C++中的构造函数和python中的__init__方法是很相似的
-	都有初始化类的作用
-
-*/
-
-
-
-// 检查析构函数和构造函数的顺序
-class People {
+class Buliding {
+	
 public:
-	People(string name, string p) : people_name(name), people_phone(p)
-	{} //利用参数列表来初始化类
+	// 构造函数必须写在public的作用域下
+	Buliding() {
+		m_Sitting_room = "客厅";
+		m_bed_room = "卧室";
+	}
 
-	string people_name;
-	Phone people_phone;
-
+public:
+	string m_Sitting_room;
+private:
+	string m_bed_room;
 };
 
-class Phone {
-public:
-	Phone(string name):phone_name(name) {}
-	string phone_name;
+void test01() {
+	Buliding b;
+	cout << b.m_Sitting_room << endl;
+}
 
-};
 int main() {
-
-	Phone pp("小米");
-	//People p("张三", "小米");
-	//cout << p.people_name << "拿着" << p.people_phone.phone_name << endl;
+	test01();
 	return 0;
 }
